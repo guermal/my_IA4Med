@@ -73,6 +73,11 @@ approval) and cite the challenge papers listed on its registration page.
 The repo only contains the derived patient split (`computer_vision/brain_segmentation/cache/index.json`:
 patient IDs, slice lists and normalisation statistics), so every method uses the exact same patients.
 
+## License
+The code in this repository is released under the [Apache License 2.0](LICENSE).
+Submodules, pretrained weights and datasets keep their own licenses and terms (see below and each
+folder's README; e.g. BiomedParse weights and BraTS data have their own usage terms).
+
 ## Third-party code
 - [ChestXRayAnatomySegmentation](https://github.com/ConstantinSeibold/ChestXRayAnatomySegmentation) (CXAS), as a submodule, under its own license.
 - [3d-nii-visualizer](https://github.com/adamkwolf/3d-nii-visualizer), a NIfTI 3D viewer, as a submodule, under its own license.
