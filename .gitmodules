@@ -1,0 +1,6 @@
+[submodule "computer_vision/ChestXRayAnatomySegmentation"]
+	path = computer_vision/ChestXRayAnatomySegmentation
+	url = https://github.com/ConstantinSeibold/ChestXRayAnatomySegmentation.git
+[submodule "computer_vision/brain_segmentation/3d-nii-visualizer"]
+	path = computer_vision/brain_segmentation/3d-nii-visualizer
+	url = https://github.com/adamkwolf/3d-nii-visualizer.git

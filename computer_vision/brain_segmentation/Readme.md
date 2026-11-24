@@ -1,0 +1,2 @@
+# In this project we will try many segmentation method for a brain tumor detection
+# we will try many possible methods spanning from direct Unet application then ,encoder decoder method, SwinUnet then try Dino features extrators plus a learnable decoder following DPT like method and compare with a pure VIT pre trained instead of Dino
