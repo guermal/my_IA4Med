@@ -51,7 +51,7 @@ Not VLMs: they need a box, point or scribble. Best used as a reference upper bou
 ## Steps
 1. **Accept the weights' terms.** The weights are gated: open https://huggingface.co/microsoft/BiomedParse
    while logged in and agree to share your information. Then run `huggingface-cli login`.
-2. **Separate environment** (pins torch 2.6 / timm 0.9.16 / transformers 4.40, which clash with `my_projects`):
+2. **Separate environment** (pins torch 2.6 / timm 0.9.16 / transformers 4.40, which clash with the main environment from the top-level `requirements.txt`):
    ```
    conda create -n biomedparse python=3.10.14 -y
    conda activate biomedparse
@@ -62,11 +62,11 @@ Not VLMs: they need a box, point or scribble. Best used as a reference upper bou
    Windows support isn't stated anywhere in their docs; if something Linux-only shows up, use WSL.
 3. **Export, infer, score:**
    ```
-   # in my_projects env, from this folder
+   # in the main env, from this folder
    python biomedparse_brats.py export --split test --sequence t1ce
    # in biomedparse env, from the BiomedParse clone (downloads biomedparse_v2.ckpt, ~4.5 GB)
    python inference.py --input_dir <this folder>/inputs/t1ce --output_dir <this folder>/outputs/t1ce --slice_batch_size 1
-   # back in my_projects env
+   # back in the main env
    python biomedparse_brats.py score --split test --pred-dir outputs/t1ce
    ```
    Lower `--slice_batch_size` if the 6 GB GPU runs out of memory (no memory figures are published).

@@ -1,0 +1,13 @@
+# Environment the Qwen2.5-VL chest X-ray fine-tuning was run with (Python 3.11, Windows 11).
+# Install PyTorch with CUDA first (see the top-level requirements.txt).
+transformers==5.15.0
+trl==1.11.0.dev0     # development build, installed from https://github.com/huggingface/trl
+peft==0.20.0
+bitsandbytes==0.50.1
+accelerate==1.14.0
+datasets==5.0.1
+qwen-vl-utils==0.0.14
+dask==2026.7.1
+pandas==3.0.5
+pillow==12.3.0
+wandb==0.28.2

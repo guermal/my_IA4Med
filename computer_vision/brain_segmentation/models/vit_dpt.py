@@ -4,6 +4,14 @@
 #   jepa   -> DINOv2 ViT-S/14 after I-JEPA continued pretraining on BraTS (method 2, see pretrain_jepa.py)
 # 4-channel MRI input: timm adapts the RGB patch embedding identically for every backbone (repeat + rescale).
 
+import os
+os.environ.setdefault("HF_HOME", r"D:\huggingface_cache")   # must be set before timm imports huggingface_hub
+try:  # use the OS cert store (certifi's bundle fails on some machines' HTTPS chains)
+    import truststore
+    truststore.inject_into_ssl()
+except ImportError:
+    pass
+
 import torch
 import torch.nn as nn
 import torch.nn.functional as F

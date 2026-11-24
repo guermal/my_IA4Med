@@ -5,6 +5,7 @@
 # which slices contain brain / tumor) in cache/index.json, built once by `python data.py`.
 
 import json
+import os
 import random
 from pathlib import Path
 
@@ -15,7 +16,8 @@ from torch.utils.data import Dataset
 
 from metrics import derive_brats_regions
 
-DATA_ROOT = Path(r"D:\brain_tumor\brats\BraTS2020_TrainingData\MICCAI_BraTS2020_TrainingData")
+DATA_ROOT = Path(os.environ.get(
+    "BRATS_ROOT", r"D:\brain_tumor\brats\BraTS2020_TrainingData\MICCAI_BraTS2020_TrainingData"))
 INDEX_PATH = Path(__file__).parent / "cache" / "index.json"
 MODALITIES = ("flair", "t1", "t1ce", "t2")
 CROP = slice(8, 232)  # 240 -> 224 center crop; BraTS brains fit inside it (ponytail: fixed crop, no per-volume bbox)
